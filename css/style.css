@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/*Wildcard/Comodin, aplica a cualquier elemento o componente del documento HTML*/
+:root {
+    --border-radius: 2rem;
+    --bg: #060D23;
+    --btn-bg: #3F396F;
+    --glow-size: 0.5rem;
+}   
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color:#060D23;
+}
+
+label, h1{
+    color: white;
+}
+
+body{
+    width: 100%; 
+    height: 100vh; 
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top;
+    background-image:url("../resources/fondo.jpg");
+}
+
+
+header {
+    text-align: center;
+    font-size: 20px;
+}
+
+
+.contenido{
+    border: 1px solid #717377;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 16px;
+    background: #ffffff52;
+    box-shadow: 0px 3px 15px rgba(175, 75, 221, 0.737);
+}
+
+.button-glow {
+    min-width: 10rem;
+    min-height: 3rem;
+    text-decoration: none;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    z-index: 0;
+    border-radius: var(--border-radius);
+    transition: all 0.5s;
+    gap: 0.5rem;
+}
+
+.button-glow:before {
+    content: '';
+    background: linear-gradient(to right, #B881FF, #A963F7,
+            #8bff5d, #ffc300, #B881FF, #A963F7,
+            #8bff5d, #ffc300, #B881FF);
+    position: absolute;
+    background-size: 300%;
+    z-index: -1;
+    filter: blur(var(--glow-size));
+    width: calc(100% + var(--glow-size));
+    height: calc(100% + var(--glow-size));
+    opacity: 0;
+    border-radius: var(--border-radius);
+    animation: glow 25s alternate infinite;
+    transition: opacity .5s linear;
+}
+
+.button-glow:active {
+    background: var(--btn-bg);
+}
+
+.button-glow:hover:before {
+    opacity: 1;
+}
+
+.button-glow:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--btn-bg);
+    left: 0;
+    top: 0;
+    border-radius: var(--border-radius);
+}
+
+input{
+    width: 250px;
+    padding: 10px 30px;
+    font-size: 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+select {
+    width: 250px;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 8px 0;
+    border-radius: 16px; 
+    border: 2px solid #3F396F; 
+    background: #ffffff; 
+    color: #060D23; 
+    box-shadow: 0px 3px 10px rgba(175, 75, 221, 0.4); 
+    outline: none; 
+    transition: all 0.3s ease; 
+    appearance: none; 
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23606D23' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 15px) center;
+    background-size: 15px;
+}
+
+select:hover {
+    border-color: #A963F7; 
+    box-shadow: 0px 3px 15px rgba(175, 75, 221, 0.6); 
+}
+
+select:focus {
+    border-color: #8bff5d; 
+    box-shadow: 0px 3px 15px rgba(139, 255, 93, 0.6); 
+    background: #f3f3f3;
+}
+
+
+select option {
+    background-color: #3F396F;
+    color: white; 
+    padding: 10px; 
+    font-size: 16px; 
+    border: none;
+    text-align: left; 
+    cursor: pointer; 
+}
+
+select option:checked {
+    background-color: #8bff5d; 
+    color: #060D23; 
+}
+
+
+select option:hover {
+    background-color: #A963F7; 
+    color: #fff; 
+}
+
+.resultados {
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #717377;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 16px;
+    background: #ffffff52;
+    box-shadow: 0px 3px 15px rgba(175, 75, 221, 0.737);
+}
+
+.tarjetas {
+    margin: 5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tarjeta {
+    background-color: #B881FF;
+    width: 24%;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    transition-duration: 0.5s;
+}
+.tarjeta:hover {
+    background-color: #4ea0cfd3;
+}
+
+.sinresultados {
+    color: #ac3131;
+    font-weight: bold;
+}
+
+#div_button {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100px; 
+}
