@@ -183,10 +183,13 @@ select option:hover {
     margin: 10px;
     border-radius: 10px;
     text-align: center;
-    transition-duration: 0.5s;
+    transition: transform 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent; /* Agrega un borde inicial */
 }
+
 .tarjeta:hover {
-    background-color: #4ea0cfd3;
+    transform: scale(1.1);
+    border: 2px solid #A963F7; 
 }
 
 .sinresultados {
